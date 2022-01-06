@@ -1,36 +1,23 @@
-import React,{ lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 let Login = lazy(() => import('../pages/Login'));
 let Register = lazy(() => import('../pages/Register'));
+let Home = lazy(() => import('../pages/Home'))
 
-interface RouteBase {
-  // 路由路径
-  path: string;
-  // 路由组件
-  element: any;
-}
 
-// export const signRoutes: RouteBase[] = [
-//   {
-//     path: "/", element: <Login />
-//   },
-//   {
-//     path: "/register", element: <Register />
-
-//   },
-//   {
-//     path: '*', element: () => <Navigate to="/" />
-//   }
-// ]
 
 export const SignRoutes = () => {
+  // 这里的进行类型约束，但是
   const signRoutes = useRoutes([
     {
       path: "/", element: <Login />
     },
     {
       path: "/register", element: <Register />
-  
+
+    },
+    {
+      path: "/home", element: <Home />
     },
     {
       path: '*', element: <Navigate to="/" />

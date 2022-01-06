@@ -1,13 +1,10 @@
 import React from 'react';
 import './App.css';
-import { GlobalStyle } from  './style';
+import { GlobalStyle } from './style';
 import { SignRoutes } from './routes'
 
 
-
-
 function App() {
-
   return (
     <div className="App">
       <GlobalStyle />
