@@ -12,7 +12,7 @@ const router = new KoaRoutes();
 
 export default () => {
   router.post("/checkLogin", queryController.query);
-  router.get("/userinfo", verify, ctx => {
+  router.get("/userinfo", verify, (ctx: any) => {
     ctx.body = {
       code: 200,
       user: ctx.user || {}

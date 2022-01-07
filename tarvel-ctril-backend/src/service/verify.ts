@@ -2,7 +2,7 @@ import { SECRET } from '../config/app.config';
 import jwt from 'jsonwebtoken';
 
 
-export const verify = async (ctx, next) => {
+export const verify = async (ctx: any, next: any) => {
   // 登陆验证
   const auth = ctx.request.headers['authorization'];
   console.log(auth, "////");
@@ -13,7 +13,7 @@ export const verify = async (ctx, next) => {
     }
   }
   try {
-    const playload = jwt.verify(auth, SECRET);
+    const playload: string = jwt.verify(auth, SECRET);
     ctx.user = playload;
     await next();
   } catch(e) {

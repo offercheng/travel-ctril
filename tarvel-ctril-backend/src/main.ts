@@ -8,5 +8,5 @@ const app = new Koa();
 middleware(app);
 // 将服务挂载在 8888 端口
 app.listen(APP_PORT, () => {
-  console.log(`项目在 5050 端口启动`);
+  console.log(`项目在 ${APP_PORT} 端口启动`);
 })

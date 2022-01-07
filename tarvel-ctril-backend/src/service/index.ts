@@ -2,14 +2,14 @@ import { getAllPeople } from '../database';
 import jwt from 'jsonwebtoken';
 import { SECRET } from '../config/app.config'
 
-export const findQueryResult = async (ctx) => {
+export const findQueryResult = async (ctx: any) => {
   const { userName, password } = ctx.request.body;
-  console.log(userName, password);
+  // console.log(userName, password);
   if (!userName || !password){
     ctx.body = '出错了';
   } else {
     const users:any = await getAllPeople();
-    console.log(users);
+    // console.log(users);
     // 使用 findIndex 对符合条件的数据 返回 下标地址
     let index = users.findIndex((user) => user.userName === userName && user.password === password);
     // console.log(index);
@@ -20,7 +20,7 @@ export const findQueryResult = async (ctx) => {
         user: users[index],
       }, SECRET, {
         // 授权码失效时间
-        expiresIn: 600
+        expiresIn: 60
       });
       // console.log("------------");
       ctx.body = {

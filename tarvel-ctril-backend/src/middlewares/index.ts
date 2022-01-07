@@ -3,7 +3,7 @@ import routes from '../routers';
 import bodyParser from 'koa-bodyparser';
 import cors from '../crossDomain';
 
-export default (app) => {
+export default (app: any) => {
   // 挂载
   app.use(cors);
   app.use(bodyParser());

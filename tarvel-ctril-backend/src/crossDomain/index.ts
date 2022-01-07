@@ -1,4 +1,4 @@
-export default async (ctx, next) => {
+export default async (ctx: any, next: any) => {
   // 允许来自所有域名请求（不携带 Cookie，如果要携带 Cookie 的话，要制定域名）
   ctx.set('Access-Control-Allow-Origin', 'http://localhost:3000');  
   // 设置所允许的 HTTP请求方法
