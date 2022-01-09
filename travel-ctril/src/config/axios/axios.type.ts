@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from "axios";
 
-export interface AxiosResponse< T = any > {
+export interface AxiosResponse<T = any> {
   data: T;
   config: AxiosRequestConfig;
 }
@@ -10,7 +10,6 @@ export interface IDataType<T = any> {
   status: string
   data: T;
 }
-
 
 export interface HYRequestInterceptors<T = AxiosResponse> {
   // 请求成功

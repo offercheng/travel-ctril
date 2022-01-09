@@ -5,9 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css';
 import { BrowserRouter as Router} from 'react-router-dom';
+import Loading from './common/Loading'
 
 ReactDOM.render(
-  <Suspense fallback={<div>loading...</div>}>
+  <Suspense fallback={<Loading />}>
   <Router>
     <App />
   </Router>

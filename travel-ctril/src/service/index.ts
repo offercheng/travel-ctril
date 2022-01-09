@@ -16,7 +16,7 @@ export const hyRequest = new HYRequest({
       if(token) {
         // 这里要注意的就是  ! 非空断言符号的使用
         config.headers!.Authorization = token; 
-        console.log(config.headers, "-------");
+        // console.log(config.headers, "-------");
       }
       return config
     }

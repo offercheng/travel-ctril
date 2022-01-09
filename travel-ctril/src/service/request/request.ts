@@ -16,8 +16,8 @@ export class HYRequest {
     // 全局的请求拦截
     this.instance.interceptors.request.use(
       (config) => {
-        console.log(config);
-        console.log('请求拦截成功');
+        // console.log(config);
+        // console.log('请求拦截成功');
         return config
       },
       (error) => {
@@ -28,8 +28,8 @@ export class HYRequest {
     this.instance.interceptors.response.use(
       (res) => {
         // res 为 AxiosResponse 类型，含有 config/data/headers/request/status/statusText 属性
-        console.log(res);
-        console.log('响应拦截成功');
+        // console.log(res);
+        // console.log('响应拦截成功');
         return res.data
       },
       (error) => {

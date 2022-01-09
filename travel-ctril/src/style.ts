@@ -36,7 +36,7 @@ html, body, div, span, applet, object, iframe,
 		line-height: 1;
 	}
 	html, body {
-		background: #f2f3f4;;
+		background: #f6f6f6;;
 	}
 	ol, ul {
 		list-style: none;

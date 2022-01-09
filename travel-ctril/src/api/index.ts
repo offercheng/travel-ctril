@@ -1,9 +1,13 @@
-// 基础的路由
-const url = 'http://localhost:5050/';
+// 对路径的类型限制
+interface pathProps {
+  checkLogin: string;
+  selectgoods: string
+}
 
 // 配置路径
-const serverPath = {
-  checkLogin: url + "checkLogin",   // 登录接口检查用户名和密码
+const serverPath: pathProps = {
+  checkLogin: "checkLogin",   // 登录接口检查用户名和密码
+  selectgoods: "selectgoods",   // 请求首页的数据
 }
 
 export default serverPath

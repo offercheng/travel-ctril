@@ -14,7 +14,7 @@ const Center = styled.div`
 const Register = () => {
   return (
     <Center>
-      <Spin tip='Loading...'  >zz
+      <Spin tip='Loading...'  >
       <Card title="JAKE CMM System" bordered={true} style={{ width: 400 }}>
         <Input id="userName" size='large' placeholder="Enter your userName" prefix={<UserOutlined />} /><br /><br />
         <Input.Password id="password" size='large' placeholder="Enter your password" prefix={<KeyOutlined />} /><br /><br />
