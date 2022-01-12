@@ -2,24 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Input, Button, Spin, message } from 'antd';
 import { UserOutlined, KeyOutlined } from '@ant-design/icons';
-import styled from 'styled-components';
 // 这里可以使用 webpack进行配置 把 ../../ 替换成 @ ，让代码更加的优美
 import { hyRequest } from '../../service'
 import { IDataType } from '../../config/axios/axios.type'
 import { DateProps } from './index.type';
-import serverPath from '../../api'
+import serverPath from '../../api';
+import { Center } from './index.layout';
 
-const Center = styled.div`
-  margin: 150px auto;
-  width: 400px;
-`
+
 
 /**
  * 使用 antd 对 login 界面进行简单的布局 
  */
 const Login: React.FC = () => {
 
-  
+
   // 对用户名的私有属性的设计
   const [userName, setUserName] = useState(() => "");
   // 对用户密码的私有属性的设计
@@ -82,10 +79,10 @@ const Login: React.FC = () => {
     <Center>
       <Spin tip='Loading...' spinning={isLoading}  >
         <Card title="CMM REACT TRAVL" bordered={true} style={{ width: 400 }} headStyle={{ textAlign: "center" }}>
-          <Input id="userName" size='large' placeholder="Enter your userName" prefix={<UserOutlined />} onChange={(event) => { setUserName(event.target.value) }} /><br /><br />
-          <Input.Password id="password" size='large' placeholder="Enter your password" prefix={<KeyOutlined />} onChange={(event) => { setPassword(event.target.value) }} /><br /><br />
-          <Button type='primary' size='large' block onClick={checkLogin}>Login in</Button>
-          <Link to="./register" >注册</Link>
+          <Input className='login-user' id="userName" size='large' placeholder="Enter your userName" prefix={<UserOutlined />} onChange={(event) => { setUserName(event.target.value) }} />
+          <Input.Password className='login-pwd' id="password" size='large' placeholder="Enter your password" prefix={<KeyOutlined />} onChange={(event) => { setPassword(event.target.value) }} />
+          <Button className='login-but' type='primary' size='large' block onClick={checkLogin}>Login in</Button>
+          <Link className='login-toregister' to="/register" >注册</Link>
         </Card>
       </Spin>
     </Center>

@@ -19,6 +19,14 @@ const Header: React.FC = () => {
     window.location.href = "/shopping"
   }
 
+  const gotoLogout = () => {
+    if(window.localStorage.getItem("token")) {
+       window.localStorage.removeItem("token");
+       window.location.href = "/"
+    }
+    
+  }
+
   return (
     <React.Fragment>
       <Top>
@@ -41,6 +49,7 @@ const Header: React.FC = () => {
             <div className='header-button'>
               <Button onClick={gotoShop} type="text">购物车</Button>
               <Typography.Text>{userName}</Typography.Text>
+              <Button onClick={gotoLogout} type="text">退出登录</Button>
             </div>
             :
             <div className='header-button'>
