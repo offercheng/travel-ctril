@@ -31,5 +31,6 @@ export const findQueryResult = async (ctx: any) => {
     // ctx.body ="123456"
   }
   console.log(ctx.body);
-  
 }
+
+ 

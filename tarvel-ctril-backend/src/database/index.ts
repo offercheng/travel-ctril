@@ -30,7 +30,7 @@ export const getAllPeople = async () => {
     // sql 语句的 模板
     const modSql: string = 'SELECT * FROM people';
     // 进行sql 查询，这里也做了 报错的处理 
-    connection.query(modSql, (error, results, fields) => {
+    connection.query(modSql, (error, results) => {
       if(error) {
         console.log(error);
         reject(error);
@@ -43,5 +43,33 @@ export const getAllPeople = async () => {
   // console.log(fields);
   
   // 结束连接减少数据库资源的消耗
-  // connection.end()
+  connection.end()
+}
+
+export const getAllGoods = async() => {
+  return new Promise((resolve,reject) => {
+    const modSql: string = "SELECT * from goods";
+    connection.query(modSql, (error, results) => {
+      if(error) {
+        reject(error);
+        return ;
+      }
+      resolve(results)
+    });
+  });
+  connection.end();
+}
+
+export const insertUser = async(userName :string, password: string) => {
+  return new Promise((resolve, reject) => {
+    const addSql: string = "INSERT INTO people(userName, password) VALUES(?,?)"
+    const addSqlParams = [userName, password];
+    connection.query(addSql, addSqlParams,(error, results) => {
+      if(error) {
+        reject(error);
+        return;
+      }
+      resolve(results);
+    })
+  })
 }
